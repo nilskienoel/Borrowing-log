@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Borrow Request</title>
+    <title>Borrow Request</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
-
             margin: 0;
             padding: 0;
         }
@@ -27,7 +26,6 @@
             --primary-light: rgba(4, 170, 109, 0.25);
         }
 
-        /* Form card */
         form {
             max-width: 450px;
             margin: 0 auto;
@@ -37,7 +35,6 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        /* Centered, narrower fields (remove max-width to make them full width) */
         .form-horizontal .form-group {
             max-width: 400px;
             margin-left: auto;
@@ -45,13 +42,11 @@
             margin-bottom: 20px;
         }
 
-        /* Labels */
         .form-horizontal label {
             font-weight: 600;
             color: #333;
         }
 
-        /* Inputs */
         .form-control {
             height: 42px;
             border: 1px solid #ccc;
@@ -66,7 +61,6 @@
             outline: none;
         }
 
-        /* Button */
         button[type="submit"] {
             display: block;
             width: 100%;
@@ -76,7 +70,6 @@
             border-radius: 6px;
             padding: 12px 16px;
             font-size: 15px;
-            font-weight: 400;
             cursor: pointer;
             transition: background-color 0.2s;
         }
@@ -85,6 +78,15 @@
         button[type="submit"]:focus {
             background-color: var(--primary-dark);
             color: #fff;
+        }
+
+        .cancel-link {
+            text-align: center;
+            margin: 15px 0;
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid gray;
         }
     </style>
 </head>
@@ -107,16 +109,17 @@
 
         <div class="form-group">
             <label for="quantity">Quantity:</label>
-            <input type="number" class="form-control" name="quantity" id="quantity" placeholder="Enter Quantity" required>
+            <input type="number" class="form-control" name="quantity" id="quantity" placeholder="Enter Quantity" min="1" step="1" required>
         </div>
 
         <div class="form-group">
             <label for="borrow_date">Borrow Date:</label>
-            <input type="date" class="form-control" name="borrow_date" id="borrow_date" placeholder="Enter Borrow Date" required>
+            <input type="date" class="form-control" name="borrow_date" id="borrow_date" required>
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-default">Save</button>
+            <button type="submit" class="btn btn-default">Save changes</button>
+            <button class="cancel-link"><a href="borrowing_log.php">Cancel</a></button>
         </div>
     </form>
 </body>
